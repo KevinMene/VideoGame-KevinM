@@ -1,0 +1,35 @@
+.fondo {
+  height: 100vh;
+  background: url("../../img/ladingpage.jpg") 50% fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.titulo {
+  align-items: center;
+  align-content: center;
+  margin-bottom: 15px;
+  height: 2vh;
+}
+.btntitle {
+  display: flex;
+  position: fixed;
+  top: 20%;
+  left: 46%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 288%;
+  border-radius: 1.25rem !important;
+  border: 1px solid #229954;
+  background: none;
+  color: #229954;
+  cursor: pointer;
+}
+.btntitle:hover {
+  color: red;
+  border: 1px solid red;
+  font-size: 300%;
+  text-shadow: 20px 20px 30px red;
+  border: none;
+  font-family: cursive;
+}
