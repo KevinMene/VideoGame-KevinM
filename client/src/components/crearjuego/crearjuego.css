@@ -1,0 +1,99 @@
+.main-add {
+  height: 100vh;
+  background: url("../../img/createvideogame.webp") 50% fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-add {
+  text-align: center;
+  margin: 40px;
+  padding: 20px;
+  width: 800px;
+  height: 700px;
+  background-color: black;
+  opacity: 0.8;
+  border-radius: 1.25rem !important;
+}
+.container-add h2 {
+  text-align: center;
+  font-family: "Press Start 2P";
+  font-size: xx-large;
+  color: white;
+  height: max-content;
+}
+.container-add h2:hover{
+  color: red;
+  text-shadow: 3px 3px 3px  red;
+}
+.container-add .div-cont {
+  display: flex;
+  justify-content: center;
+}
+.container-add .div-cont .title-name{
+  color: white;
+}
+.genres-div {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  width: 650px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.plat-div {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  width: 650px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.container-add label {
+  font-size: large;
+  margin: 3px;
+}
+
+.name {
+  height: 25px;
+  width: 400px;
+  border-radius: 25px;
+}
+
+.dt {
+  height: 25px;
+  width: 120px;
+  border-radius: 30px;
+}
+
+.div-but-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.div-but-form button {
+  font-family: "Open Sans", sans-serif;
+  font-size: 200%;
+  border-radius: 1.25rem !important;
+  border: none;
+  background: none;
+  cursor: pointer;
+  align-items: center;
+  color: white;
+}
+
+.div-but-form button:hover {
+  color: red;
+  border: 1px solid red;
+  font-size: 220%;
+  box-shadow: 10px 10px 20px red;
+  font-family: cursive;
+  cursor: pointer;
+}
+

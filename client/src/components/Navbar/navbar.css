@@ -1,73 +1,52 @@
-.navbar{
+.navbar-div {
   width: 100%;
-  height: 6vh;
-  background: #229954;
+  height: 5vh;
+  background: #00acee;
   display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
   top: 0%;
 }
-
-.navbar div{
-  width: 20%;
-  height: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.navbar .btnnavbar{
+.navbar-div button {
   font-family: "Open Sans", sans-serif;
   font-size: 200%;
   border-radius: 1.25rem !important;
-  border: 1px solid black;
+  border: none;
   background: none;
   cursor: pointer;
   align-items: center;
-  justify-content: first start;
 }
-.navbar .btnnavbar:hover{
+.navbar-div button:hover {
   color: red;
   border: 1px solid red;
-  font-size: 300%;
-  text-shadow: 20px 20px 30px red;
+  font-size: 220%;
+  text-shadow: 7px 7px 7px red;
   border: none;
   font-family: cursive;
   cursor: pointer;
 }
-
-.searchbar{
-  display: flex;
-}
-
-.searchbar input{
-  height: 90%;
-  color: black;
-  border-radius: 1.25rem !important;
-  border: 1px solid #229954;
-}
-
-.searchbar form button{
-  height: 90%;
-  border-radius: 1.25rem !important;
-  border: 1px solid #229954;
-  background-color: white;
-}
-
-.searchbar input:hover{
-  cursor: pointer;
-  font-size: 100%;
-}
-
-.searchbar form button:hover{
+.navbar-div h1:hover {
   color: red;
-  border: 1px solid red;
-  font-size: 100%;
-  text-shadow: 20px 20px 30px red;
-  border: none;
-  font-family: cursive;
-  cursor: pointer;
+  text-shadow: 7px 7px 7px red;
 }
-
-
+.btninicio {
+  position: absolute;
+  left: 10%;
+  top: 0%;
+}
+.btnVideogame {
+  position: absolute;
+  left: 25%;
+  top: 0%;
+}
+.btnCrear {
+  position: absolute;
+  right: 25%;
+  top: 0%;
+}
+.btnabout {
+  position: absolute;
+  right: 10%;
+  top: 0%;
+}

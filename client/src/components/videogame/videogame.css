@@ -1,10 +1,113 @@
-.mostrar{
+.container-game {
+  position: relative;
+  width: 348px;
+  height: 250px;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  margin: auto;
+}
+.container-game .game-div {
+  position: relative;
+  width: 348px;
+  background: #000;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  margin-right: 26px;
+  margin-top: 4px;
+  border-radius: 1rem !important;
+}
+.container-game .game-div .Imgcont {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+}
+.container-game .game-div .Imgcont:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #f00, #000);
+  z-index: 1;
+  opacity: 0;
+  transition: 0.5s;
+  mix-blend-mode: multiply;
+}
+.container-game .game-div:hover .Imgcont:before {
+  opacity: 1;
+}
+.container-game .game-div .Imgcont img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container-game .game-div .content-div {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  padding: 4px;
+  align-items: flex-start;
+  box-sizing: content-box;
+}
+.container-game .game-div .content-div h3 {
+  color: white;
+  transition: 0.5s;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-size: 20px;
+  transform: translateY(150px);
+  transition-delay: 0.3s;
+}
+.container-game .game-div:hover .content-div h3 {
+  transform: translateY(0px);
+}
+.container-game .game-div .content-div p {
+  color: #fff;
+  transition: 0.5s;
+  font-size: 14px;
+  transform: translateY(150px);
+  transition-delay: 0.4s;
+}
+.container-game .game-div:hover .content-div p {
+  transform: translateY(0px);
+}
+.container-game .game-div .btn-div {
+  display: flex;
+  justify-content: flex-end;
+  width: 315px;
+}
+.container-game .game-div .content-div .div-info .btn-div .btn-detail {
+  font-family: "Open Sans", sans-serif;
+  font-size: 200%;
+  border-radius: 1.25rem !important;
+  border: none;
+  background: none;
+  cursor: pointer;
   align-items: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin: 40px auto 100px auto;
+  color: white;
+}
+.container-game .game-div .content-div .div-info .btn-div .btn-detail:hover {
+  color: red;
+  border: 1px solid red;
+  font-size: 220%;
+  box-shadow: 10px 10px 20px red;
+  border: none;
+  font-family: cursive;
+  cursor: pointer;
+  color: red;
+  background-color: black;
 }

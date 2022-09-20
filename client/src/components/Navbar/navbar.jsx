@@ -1,55 +1,18 @@
-import React, { Fragment, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom';
+import React from 'react'
+import { NavLink } from 'react-router-dom';
 import './navbar.css';
+import { GiConsoleController } from 'react-icons/gi';
 
 const Navbar = () => {
-  const [name, setName] = useState('');
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    setName('');
-  }
 
   return (
-    <Fragment>
-      <div className='navbar'>
-        <div className='videogames'>
-          <Link to='/'>
-            <button className='btnnavbar' type='submit'>
-              <strong>Inicio</strong>
-            </button>
-          </Link>
-        </div>
-        <div className='home'>
-          <Link to='/home'>
-            <button className='btnnavbar' type='submit'>
-              <strong>Home</strong>
-            </button>
-          </Link>
-        </div>
-        <div className='crear'>
-          <Link to='/create'>
-            <button className='btnnavbar' type='submit'>
-              <strong>Crear</strong>
-            </button>
-          </Link>
-        </div>
-        <div className='searchbar'>
-          <form onSubmit={(e) => handleSubmit(e)}>
-            <input value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder='Buscar video juego'
-              type='text'>
-            </input>
-            <NavLink to={`/results/${name}`}>
-              <button name='name' type='submit'>
-                {' '}Buscar!{' '}
-              </button>
-            </NavLink>
-          </form>
-        </div>
-      </div>
-    </Fragment>
+    <div className='navbar-div'>
+      <NavLink to='/'><button className='btninicio'><strong>Inicio</strong></button></NavLink>
+      <NavLink to='/videogames'><button className='btnVideogame'><strong>Home</strong></button></NavLink>
+      <h1><GiConsoleController />VideoGame-KevinM<GiConsoleController /></h1>
+      <NavLink to='/crearjuego'><button className='btnCrear'><strong>Crear juego</strong></button></NavLink>
+      <NavLink to='/about'><button className='btnabout'><strong>About</strong></button></NavLink>
+    </div>
   )
 }
 

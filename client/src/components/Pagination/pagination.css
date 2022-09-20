@@ -1,0 +1,34 @@
+.pag-div {
+  margin-left: auto;
+  margin-right: auto;
+  left: 0%;
+  right: 43%;
+  bottom: 0%;
+  text-align: center;
+}
+.pag-div ul {
+  display: flex;
+}
+.pag-div li {
+  list-style: none;
+  margin: 10px;
+}
+.pag-div .btn-pag {
+  font-family: "Open Sans", sans-serif;
+  font-size: 150%;
+  border-radius: 1.25rem !important;
+  border: 1px solid white;
+  background: none;
+  cursor: pointer;
+  align-items: center;
+  color: white;
+}
+.pag-div .btn-pag:hover {
+  color: red;
+  border: 1px solid red;
+  font-size: 200%;
+  box-shadow: 10px 10px 20px red;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
+  background-color: black;
+}

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import './footer.css'
 
-const footer = () => {
+const Footer = () => {
   return (
   <Fragment>
       <div id="footer" className="footer-copyright text-center py-3">
@@ -11,4 +11,4 @@ const footer = () => {
 )
 }
 
-export default footer;
+export default Footer;

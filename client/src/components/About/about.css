@@ -1,0 +1,41 @@
+.container-abou {
+  height: 100vh;
+  background: url("../../img/about.jfif") 50% fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  display: flex;
+  background-color: white;
+  position: absolute;
+  top: 16%;
+  right: 22%;
+  background-color: antiquewhite;
+  border-radius: 1.25rem !important;
+  border: 2px solid #229954;
+}
+.link {
+  font-size: 200%;
+  color: black;
+}
+.link-git:hover {
+  color: white;
+}
+.link-face:hover{
+  color: #3b5998;
+}
+.link-inst:hover{
+color: #E1306C;
+}
+.link-you:hover{
+  color: #b2071d;
+}
+.link-twi:hover{
+  color: #00acee;
+}
+.link-lin:hover{
+  color: #0e76a8;
+}
+

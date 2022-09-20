@@ -1,4 +1,4 @@
-.fondo {
+.fondo-lading {
   height: 100vh;
   background: url("../../img/ladingpage.jpg") 50% fixed;
   background-size: cover;
@@ -6,17 +6,29 @@
   justify-content: center;
   align-items: center;
 }
-.titulo {
-  align-items: center;
-  align-content: center;
-  margin-bottom: 15px;
-  height: 2vh;
-}
-.btntitle {
+.titulo-biev {
   display: flex;
   position: fixed;
-  top: 20%;
-  left: 46%;
+  top: 6%;
+  color: #229954;
+  font-family: Blippo, fantasy;
+  font-size: 300%;
+}
+.titulo-biev strong {
+  border-radius: 1.25rem !important;
+  border: 1px solid #229954;
+}
+.titulo-biev h1 {
+  font-size: 250%;
+}
+.titulo-biev:hover {
+  color: red;
+}
+.btntitle-lading {
+  display: flex;
+  position: fixed;
+  bottom: 17%;
+  left: 888px;
   font-family: "Open Sans", sans-serif;
   font-size: 288%;
   border-radius: 1.25rem !important;
@@ -25,7 +37,7 @@
   color: #229954;
   cursor: pointer;
 }
-.btntitle:hover {
+.btntitle-lading:hover {
   color: red;
   border: 1px solid red;
   font-size: 300%;

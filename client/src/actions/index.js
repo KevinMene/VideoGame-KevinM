@@ -1,153 +1,89 @@
-export const getvideogames = () => {
-  return function(dispatch) {
-    return fetch('http:/localhost:3001/videogames')
-    .then(r => r.json())
-    .then(json => {
-      dispatch({
-        type: 'GET_VIDEOGAMES',
-        payload: json
-      });
-    });
-  }
-}
+import axios from 'axios';
+import {
+  GET_ALL_GAMES,
+  SEARCH_BY_NAME,
+  GET_VIDEOGAME_DETAIL,
+  GET_GENRES,
+  ORDER_BY,
+  FILTER_BY
+} from './const';
 
-export const getvideogamesid = (id) => {
-  return (dispatch) => {
-    fetch(`http://localhost:3001/videogame/${id}`)
-    .then((r) => r.json())
-    .then((json) => {
+//Se  trae todos los juegos(DB, API)
+export function getAllGames() {
+  return function (dispatch) {
+    return axios.get('http://localhost:3001/videogames/').then((res) => {
       dispatch({
-        type : 'GET_VIDEOGAME_ID',
-        payload: json
+        type: GET_ALL_GAMES,
+        payload: res.data
       });
-    });
-  }
-}
-
-export const searchvideogames = (name) => {
-  return (dispatch) => {
-    fetch (`http://localhost:3001/videogames?name=${name}`)
-    .then((r) => r.json())
-    .then((json) => {
-      dispatch({
-        type: 'SEARCH_VIDEOGAMES',
-        payload: json,
-      });
-    });
-  }
-}
-
-export const getgenres = () => {
-  return (dispatch) => {
-    fetch(`http://localhost:3001/genres`)
-    .then((r) => r.json())
-    .then((json) => {
-      dispatch({
-        type: 'GET_GENRES',
-        payload: json
-      });
-    });
-  }
-}
-
-export const createvideogame = (obj) => {
-  return (dispatch) => {
-    fetch(`http://localhost:3001/videogame`, {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'content-Type' : 'application/json',
-      },
-      body: JSON.stringfy(obj),
     })
-    .then((r) => r.json())
-    .then((json) => {
-      dispatch({
-        type: 'CREATE',
-        payload: json
-      })
-    })
-  }
-}
-
-export const reserall = () => {
-  return (dispatch) => {
-    dispatch({
-      type: 'RESET'
-    })
-  }
-}
-
-export const filtergenre = (genres) => (dispatch, getState) => {
-  let gamefilter = [];
-  if (genres === 'ALL') {
-    gamefilter = getState().Videogames;
-  } else {
-    gamefilter = getState().videogames.filter((game) =>
-      (game.genres).include(genres)
-    )
+      .catch((err) => {
+        return err
+      });
   };
-  dispatch({
-    type: 'FILTER_GENRE',
-    payload: {
-      genres,
-      gamegenre: gamefilter
-    }
-  })
 }
 
-export const orderasc = (type) => (dispatch, getState) => {
-  const filtered = getState().filtergame;
-  let ordergame = [];
-  if (type === 'asc_name'){
-    ordergame = filtered.sort((a,b) => {
-      if (a.name > b.name) return 1;
-      if (a.name < b.name) return -1;
-      return 0;
+//Se trae todos los nombres encontrados por nombre (query:name)
+export function searchByName(name) {
+  return function (dispatch) {
+    return axios.get(`http://localhost:3001/videogames?name=${name}`).then((res) => {
+      dispatch({
+        type: SEARCH_BY_NAME,
+        payload: res.data
+      });
     })
-  } else if (type === 'asc_rating'){
-    ordergame = filtered.sort((a,b) => a.rating -b.rating );
-  }
-  dispatch({
-    type: 'ORDER_ASC',
-    payload: {
-      ordergame,
-      name: type
-    }
-  });
+      .catch((err) => {
+        return err
+      });
+  };
 }
 
-export const orderdesc = (type) => (dispatch, getState) => {
-  const filtered = getState().filtergame;
-  let ordergame = [];
-  if (type === 'desc_name') {
-    ordergame = filtered.sort((a, b) => {
-      if(a.name < b.name ) return 1;
-      if(a.name > b.name) return -1;
-      return 0;
+//Se trae todos los detalles del juego pasado por (param: ID)
+export function getVideogameDetail(id) {
+  return function (dispatch) {
+    axios.get(`http://localhost:3001/videogame/${id}`).then((res) => {
+      dispatch({
+        type: GET_VIDEOGAME_DETAIL,
+        payload: res.data
+      });
+    })
+      .catch((err) => {
+        return err;
+      });
+  };
+}
+
+//Se trae todos los generos
+export function getGenres() {
+  return function (dispatch) {
+    axios.get('http://localhost:3001/genres').then((res) => {
+      dispatch({
+        type: GET_GENRES,
+        payload: res.data
+      });
+    })
+      .catch((err) => {
+        return err;
+      });
+  };
+}
+
+//ordenamiento
+export function orderBy(order) {
+  return function (dispatch) {
+    dispatch({
+      type: ORDER_BY,
+      payload: order
     });
-  } else if(type === 'desc_rating') {
-    ordergame = filtered.sort((a, b) => b.rating - a.rating
-    );
-  }
-  dispatch({
-    type: 'ORDER_DESC',
-    payload: {
-      ordergame,
-      name: type
-    }
-  });
+  };
 }
 
-export const ordercreate = (source) => (dispatch, getState) => {
-  const videogames = getState().videogames.filter(function (e) {
-    return e.source === source
-  });
-  dispatch({
-    type: 'ORDER_CREATE',
-    payload: {
-      videogames,
-      source
-    }
-  });
+//filtrado
+export function filterBy(order) {
+  return function (dispatch) {
+    dispatch({
+      type: FILTER_BY,
+      payload: order
+    });
+  };
 }

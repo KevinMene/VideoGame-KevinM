@@ -1,0 +1,29 @@
+.container-div-fil {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 52px;
+  right: 426px;
+  height: 4%;
+}
+
+.selectcount {
+  font-family: "Open Sans", sans-serif;
+  border-radius: 0.25rem !important;
+  border: 1px solid white;
+  background-color: transparent;
+}
+.selectcount:hover{
+  background-color: white;
+  border: 1px solid black;
+}
+
+.option {
+  margin: 5px;
+  font-family: "Press Start 2P";
+}
+
+.optionGroup {
+  padding: 10px;
+  font-family: "Press Start 2P";
+}

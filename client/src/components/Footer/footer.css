@@ -1,7 +1,8 @@
-#footer{
+#footer {
   color: white;
-  background: #229954;
+  background: #E1306C;
   position: fixed;
   bottom: 0%;
   width: 100%;
+  text-align: center;
 }
