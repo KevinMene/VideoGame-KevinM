@@ -1,7 +1,7 @@
 const {DataTypes} = require('sequelize');
 
 module.exports = (sequelize) => {
-  sequelize.define('Genres', {
+  sequelize.define('genre', {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -11,6 +11,9 @@ module.exports = (sequelize) => {
     name: {
       type: DataTypes.STRING
     }
-
+  },{
+    timestamps: true,
+    createdAt: 'creado',
+    updateAt: false
   })
 }

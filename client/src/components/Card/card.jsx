@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom';
-import Falla from '../404/404';
+import NotFound from '../404/NotFound';
 
 const Card = ({data}) => {
   return (
@@ -8,7 +8,7 @@ const Card = ({data}) => {
       <div className='card'>
         <Link to={`/videogames/${data.id}`}>
           {data.image === null || !data.image ? (
-            <Falla image={'noimage'} />
+            <NotFound image={'noimage'} />
           ) : (
             <img className='img' src={data.image} alt={data.name} />
           )}

@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-const Falla = ({image}) => {
+const NotFound = ({image}) => {
   return(
     <Fragment>
       <div>
@@ -12,4 +12,4 @@ const Falla = ({image}) => {
   )
 }
 
-export default Falla;
+export default NotFound;

@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import './cargando.css';
 
 const Cargando = () => {
   <Fragment>

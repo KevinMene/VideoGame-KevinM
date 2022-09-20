@@ -14,22 +14,23 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    image: {
-      type: DataTypes.TEXT,
-    },
     description: {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    released: {
-      type: DataTypes.DATEONLY,
-    },
-    rating: {
-      type: DataTypes.DECIMAL,
-    },
-    platforms: {
+    platform: {
       type: DataTypes.STRING,
       allowNull: false,
-    }
+    },
+    releaseDate: {
+      type: DataTypes.STRING,
+    },
+    rating: {
+      type: DataTypes.INTEGER,
+    },
+  },{
+    timestamps: true,
+    createdAt: 'creado',
+    updateAt: false
   });
 };

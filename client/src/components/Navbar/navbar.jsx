@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
+import './navbar.css';
 
 const Navbar = () => {
   const [name, setName] = useState('');
@@ -14,12 +15,23 @@ const Navbar = () => {
       <div className='navbar'>
         <div className='videogames'>
           <Link to='/'>
-            <h2>Inicio</h2>
+            <button className='btnnavbar' type='submit'>
+              <strong>Inicio</strong>
+            </button>
           </Link>
         </div>
         <div className='home'>
           <Link to='/home'>
-            <h2>Home</h2>
+            <button className='btnnavbar' type='submit'>
+              <strong>Home</strong>
+            </button>
+          </Link>
+        </div>
+        <div className='crear'>
+          <Link to='/create'>
+            <button className='btnnavbar' type='submit'>
+              <strong>Crear</strong>
+            </button>
           </Link>
         </div>
         <div className='searchbar'>
@@ -31,15 +43,10 @@ const Navbar = () => {
             </input>
             <NavLink to={`/results/${name}`}>
               <button name='name' type='submit'>
-                {' '}Go!{' '}
+                {' '}Buscar!{' '}
               </button>
             </NavLink>
           </form>
-        </div>
-        <div className='crear'>
-          <Link to='/create'>
-            <h2>Crear</h2>
-          </Link>
         </div>
       </div>
     </Fragment>
