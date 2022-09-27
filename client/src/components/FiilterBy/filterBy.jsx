@@ -18,10 +18,10 @@ function FilteredBy ({orderBy, genres, filterBy}) {
         <select className='selectcount' onChange={handleSelect} name='' id=''>
           <option className='option' value='default'>Todos</option>
           <optgroup clasname='opgroup' label='Database'>
-            <option clasname='option' valaue='DB'>Creados</option>
+            <option clasname='option' value='DB'>Creados</option>
           </optgroup>
           <optgroup clasname='opgroup' label='API'>
-            <option clasname='option' valaue='DB'>API</option>
+            <option clasname='option' value='DB'>API</option>
           </optgroup>
           <optgroup clasname='opgroup' label='GENRES'>
             {genres && genres.map(g => <option key={g.name} value={g.name}>{g.name}</option>)}

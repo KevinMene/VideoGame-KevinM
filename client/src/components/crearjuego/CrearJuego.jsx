@@ -58,28 +58,29 @@ function CrearJuego(props) {
     }))
   }
   const validate = form => {
+    let errors = {};
     if (!form.name) {
-      Swal.fire({
+      errors.name = Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'El Nombre es requerido!',
+        text: 'Game Name is requrred!',
       })
     }
     if (!form.description) {
-      Swal.fire({
+      errors.description = Swal.fire({
         icon: 'error',
         title: 'Oops...',
         text: 'La Descripcion es requerida!',
       })
     }
     if (!form.rating) {
-      Swal.fire({
+      errors.rating = Swal.fire({
         icon: 'error',
         title: 'Oops...',
         text: 'El rating es requerido!',
       })
     } else if (!/^[1-5]$/.test(form.rating)) {
-      Swal.fire({
+      errors.rating = Swal.fire({
         icon: 'error',
         title: 'Oops...',
         text: 'El rating debe de ser de 1 a 5!',
